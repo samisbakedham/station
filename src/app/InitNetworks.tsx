@@ -14,13 +14,13 @@ const InitNetworks: FC = ({ children }) => {
 
   useEffect(() => {
     const fetchChains = async () => {
-      const { data: chains } = await axios.get<TerraNetworks>("/chains.json", {
+      const { data: chains } = await axios.get<CandleNetworks>("/chains.json", {
         baseURL: ASSETS,
       })
 
       const networks = {
         ...chains,
-        localterra: { ...chains.localterra, preconfigure: true },
+        localcndl: { ...chains.localcndl, preconfigure: true },
       }
 
       setNetworks({

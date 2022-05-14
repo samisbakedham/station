@@ -9,7 +9,7 @@ const NetworkError = () => {
   const { t } = useTranslation()
   const [network, setNetwork] = useNetworkState()
 
-  const isLocalTerra = network === "localterra"
+  const islocalcndl = network === "localcndl"
 
   return (
     <FlexColumn gap={20}>
@@ -19,13 +19,13 @@ const NetworkError = () => {
         <h1 className={styles.title}>
           {network === "mainnet"
             ? t("Too many requests. Try again later.")
-            : isLocalTerra
-            ? t("LocalTerra is not running")
+            : islocalcndl
+            ? t("localcndl is not running")
             : t(`${network} is not running`)}
         </h1>
 
-        {isLocalTerra && (
-          <ExternalLink href="https://github.com/terra-money/localterra">
+        {islocalcndl && (
+          <ExternalLink href="https://github.com/candleplatforms/candle">
             {t("Learn more")}
           </ExternalLink>
         )}
